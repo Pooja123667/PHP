@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>filename_input</title>
+	
+	 <script language="javascript"> 
+        function checkFileExtension() { 
+            fileName = document.querySelector('#file1').value; 
+            extension = fileName.split('.').pop(); 
+            document.querySelector('.output') 
+                                     .textContent = extension; 
+			input = fileName.split('.');
+			document.querySelector('.input').textContent = input;
+        }; 
+    </script> 
+	
+</head>
+
+<body>
+	<p>Select a file and click on the button  
+       to check the file extension.</p> 
+    <form> 
+        <input type="file" id="file1" /> 
+        <input type="button" value="Check Extension" 
+                             onclick="checkFileExtension();"/> 
+    </form> 
+    <p>The file extension is: <span class="output"></span></p>
+	<p>The file name is: <span class="input"></span></p> 
+   
+</body>
+</html>

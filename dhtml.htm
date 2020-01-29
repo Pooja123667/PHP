@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>JavaScript</title>
+        <style>
+            
+            .qclass {
+                width:50%;
+                margin-left: auto;
+                margin-right: auto;
+                border-bottom: 1px solid grey;
+                padding: 10px 0px 10px 0px;
+            }
+
+            .qtxt {
+                font-size: 20px;
+            }
+
+            textarea {
+                width:100%;
+            }
+        </style>
+        <script>
+            var q_no = 1;
+            var long_q = "<div class='qclass'><div class='qtxt'>#qt</div>";
+            long_q += "<div><textarea name='#qn'></textarea></div></div>";
+
+            function add_q() {
+
+                var temp = long_q;
+                var textarea_name = "q"+q_no;
+                var question = "Q"+q_no+": ";
+                q_no++;
+                var q_txt = prompt("Enter Your question ("+question+"):");
+                question += q_txt;
+                temp = temp.replace("#qt", question);
+                temp = temp.replace("#qn", textarea_name);
+                var div = document.createElement("div");
+                div.innerHTML = temp;
+
+                document.getElementById('main').appendChild(div);
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id='main'></div>
+        <div style="text-align:center; padding-top:20px">
+            <button onclick="add_q()">Add Question</button>
+        </div>
+    </body>
+</html>

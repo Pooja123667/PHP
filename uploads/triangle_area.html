@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Area of triangles</title>
+	<script language="javascript">
+	function area() {
+  var y = document.getElementById("txt1").value;
+  var z = document.getElementById("txt2").value;
+  var w = document.getElementById("txt2").value;
+  var x = (+z + +y + +w)/2;
+  var b = Math.sqrt(x*(+x - +y)*(+x - +z)*(+x - +w));
+  document.getElementById("demo").innerHTML ="The area is" + "<br>" +  b;
+}
+	</script>
+</head>
+
+<body>
+	<p>
+  Click the button to calculate area.
+    </p>
+
+	
+<p>
+  Enter first side:
+  <input type="text" id="txt1" name="side1" value=""><br><br>
+  	Enter second side:
+  <input type="text" id="txt2" name="side2" value=""><br><br>
+	Enter third side:
+  <input type="text" id="txt3" name="side3" value=""><br>
+  <button onclick="area()">Calculate</button>
+	<p id="demo"></p>
+</p>
+
+
+</body>
+</html>
